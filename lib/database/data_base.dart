@@ -9,12 +9,8 @@ import 'package:sqflite/sqflite.dart';
 class DBProvider {
   static final DBProvider db = DBProvider();
 
-  late Database _database;
-
   Future<Database> get database async {
-    if (_database != null) return _database;
-    // if _database is null we instantiate it
-    _database = await initDB();
+    Database _database = await initDB();
     return _database;
   }
 
